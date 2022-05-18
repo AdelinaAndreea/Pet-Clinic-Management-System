@@ -5,6 +5,7 @@ import com.sda.ade.petclinic.service.VeterinarianServiceImpl;
 import com.sda.ade.petclinic.service.dto.VeterinarianDto;
 import com.sda.ade.petclinic.service.exception.InvalidParameterException;
 
+import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Scanner;
 

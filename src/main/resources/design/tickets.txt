@@ -32,16 +32,16 @@ Java Desktop Application used for managing a pet clinic
 
  PCMS-5
  As a user, I should be able to add a new pet.
- I should be able to specify: race, birthdate, isVaccinated, ownerName.
+ I should be able to specify: race, birthdate, isVaccinated, ownerFirstName, ownerLastName.
 
- PCMS-6
+ PCMS-6 *homework
  As a user, I should be able to view all the pets.
  I should be able to see for each pet: id, race, birthdate, isVaccinated, ownerName.
 
- PCMS-7
+ PCMS-7 *homework
  As a user, I should be able to delete an existing pet by id.
 
- PCMS-8
+ PCMS-8 *homework
  As a user, I should be able to update an existing pet by id.
  I should be able to update: race, birthdate, isVaccinated, ownerName.
 
