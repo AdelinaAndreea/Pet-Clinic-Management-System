@@ -9,8 +9,8 @@ import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Optional;
 
-public class ClienRepositoryImpl extends BaseRepositoryImpl<Client, Long> implements ClienRepository {
-    public ClienRepositoryImpl() {
+public class ClientRepositoryImpl extends BaseRepositoryImpl<Client, Long> implements ClientRepository {
+    public ClientRepositoryImpl() {
         super(Client.class);
     }
 
@@ -29,6 +29,21 @@ public class ClienRepositoryImpl extends BaseRepositoryImpl<Client, Long> implem
                 return Optional.empty();
             }
             return Optional.of(clients.get(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
+    }
+
+    @Override
+    public Optional<Client> findByIdAndLoadPets(Long id) {
+        try {
+            Session session = SessionManager.getSessionFactory().openSession();
+            Client client=session.find(Client.class,id);
+            System.out.println(client.getPets().size());
+
+            session.close();
+            return Optional.of(client);
         } catch (Exception e) {
             e.printStackTrace();
             return Optional.empty();

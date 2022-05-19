@@ -2,8 +2,8 @@ package com.sda.ade.petclinic.service;
 
 import com.sda.ade.petclinic.model.Client;
 import com.sda.ade.petclinic.model.Pet;
-import com.sda.ade.petclinic.repository.ClienRepository;
-import com.sda.ade.petclinic.repository.ClienRepositoryImpl;
+import com.sda.ade.petclinic.repository.ClientRepository;
+import com.sda.ade.petclinic.repository.ClientRepositoryImpl;
 import com.sda.ade.petclinic.repository.PetRepository;
 import com.sda.ade.petclinic.repository.PetRepositoryImpl;
 import com.sda.ade.petclinic.service.exception.InvalidParameterException;
@@ -14,11 +14,11 @@ import java.util.Optional;
 
 public class PetServiceImpl implements PetService{
     private final PetRepository petRepository;
-    private final ClienRepository clienRepository;
+    private final ClientRepository clienRepository;
 
     public PetServiceImpl() {
         this.petRepository = new PetRepositoryImpl();
-        this.clienRepository = new ClienRepositoryImpl();
+        this.clienRepository = new ClientRepositoryImpl();
     }
 
     @Override
