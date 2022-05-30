@@ -1,39 +1,32 @@
-package com.sda.ade.petclinic.model;
+package com.sda.ade.petclinic.service.dto;
+
+import com.sda.ade.petclinic.model.Pet;
+import com.sda.ade.petclinic.model.Veterinarian;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "consult")
+public class ConsultDto {
 
-public class Consult {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "date")
     private Date date;
 
-    @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "veterinarian_id")
-    private Veterinarian veterinarian;
+    private Long veterinarianId;
 
-    @ManyToOne
-    @JoinColumn(name = "pet_id")
-    private Pet pet;
+    private Long petId;
 
-
-    public Consult() {
+    public ConsultDto() {
     }
 
-    public Consult(Date date, String description) {
+    public ConsultDto(Long id, Date date, String description, Long veterinarianId, Long petId) {
+        this.id = id;
         this.date = date;
         this.description = description;
-
+        this.veterinarianId = veterinarianId;
+        this.petId = petId;
     }
 
     public Long getId() {
@@ -60,28 +53,31 @@ public class Consult {
         this.description = description;
     }
 
-    public Veterinarian getVeterinarian() {
-        return veterinarian;
+    public Long getVeterinarianId() {
+        return veterinarianId;
     }
 
-    public void setVeterinarian(Veterinarian veterinarian) {
-        this.veterinarian = veterinarian;
+    public void setVeterinarianId(Long veterinarianId) {
+        this.veterinarianId = veterinarianId;
     }
 
-    public Pet getPet() {
-        return pet;
+    public Long getPetId() {
+        return petId;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPetId(Long petId) {
+        this.petId = petId;
     }
 
     @Override
     public String toString() {
-        return "Consult{" +
+        return "ConsultDto{" +
                 "id=" + id +
                 ", date=" + date +
                 ", description='" + description + '\'' +
+                ", veterinarianId=" + veterinarianId +
+                ", petId=" + petId +
                 '}';
     }
 }
+

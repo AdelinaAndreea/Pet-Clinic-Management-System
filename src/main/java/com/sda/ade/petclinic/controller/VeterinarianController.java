@@ -1,5 +1,6 @@
 package com.sda.ade.petclinic.controller;
 
+import com.sda.ade.petclinic.model.Veterinarian;
 import com.sda.ade.petclinic.service.VeterinarianService;
 import com.sda.ade.petclinic.service.VeterinarianServiceImpl;
 import com.sda.ade.petclinic.service.dto.VeterinarianDto;
@@ -7,9 +8,11 @@ import com.sda.ade.petclinic.service.exception.InvalidParameterException;
 
 import java.lang.reflect.Array;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
-public class VeterinarianController {
+public class
+VeterinarianController {
     private final VeterinarianService veterinarianService;
     private Scanner scanner;
 
@@ -92,6 +95,23 @@ public class VeterinarianController {
             System.out.println("Invalid parameter");
         } catch (Exception ex) {
             System.out.println("The veterinarian was not updated, internal server error!");
+        }
+    }
+    public void viewByMultipleParameters(){
+        try{
+            System.out.println("Please insert first name:");
+            String firstName = scanner.nextLine();
+            System.out.println("Please insert last name:");
+            String lastName = scanner.nextLine();
+            System.out.println("Please insert the address:");
+            String address = scanner.nextLine();
+            System.out.println("Please insert the speciality:");
+            String speciality = scanner.nextLine();
+            //dto
+          veterinarianService.findByMultipleParameters(firstName,lastName,address,speciality).stream()
+                    .forEach(veterinarian -> System.out.println(veterinarian));
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

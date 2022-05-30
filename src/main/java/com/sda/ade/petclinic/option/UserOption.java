@@ -12,6 +12,15 @@ public enum UserOption {
     ADD_NEW_PET("Add a new pet",5),
     VIEW_ALL_VACCINATED("View all vaccinated pets",6),
     VIEW_ALL_PETS_FOR_CLIENT_ID("View all pets for client id",7),
+    SHOW_ALL_PETS("Display all pets",8),
+    DELETE_PET_BY_ID("Delete pet by id",9),
+    UPDATE_PET("Update a pet",10),
+    ADD_NEW_CONSULT("Add new consult",11),
+    VIEW_ALL_CONSULTS("Display all consults",12),
+    UPDATE_DESCRIPTION("Update a description",13),
+    VIEW_ALL_CONSULTS_WITH_UNVACCINATED_PETS("View all consults with unvaccinated pets",14),
+    VIEW_CONSULT_BY_VET_ID_AND_DATE_INTERVAL("Shows consults by vet id and date interval",15),
+    VIEW_VET_WITH_MULTIPLE_PARAMETERS("Shows vets by multiple parameters",16),
     EXIT("Exit ->", 999),
     UNKNOWN("Unknown option,try again",1000);
 

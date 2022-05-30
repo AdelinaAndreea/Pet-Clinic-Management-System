@@ -1,6 +1,7 @@
 package com.sda.ade.petclinic.repository;
 
 import com.sda.ade.petclinic.model.Client;
+import com.sda.ade.petclinic.model.Pet;
 import com.sda.ade.petclinic.repository.base.BaseRepositoryImpl;
 import com.sda.ade.petclinic.utils.SessionManager;
 import org.hibernate.Session;
@@ -40,7 +41,7 @@ public class ClientRepositoryImpl extends BaseRepositoryImpl<Client, Long> imple
         try {
             Session session = SessionManager.getSessionFactory().openSession();
             Client client=session.find(Client.class,id);
-            System.out.println(client.getPets().size());
+           System.out.println(client.getPets().size());
 
             session.close();
             return Optional.of(client);
